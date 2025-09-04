@@ -22,9 +22,15 @@ public class Motoboy extends Funcionario{
                 "carteiraDeHabilitacao='" + carteiraDeHabilitacao + '\'' +
                 ", nome='" + nome + '\'' +
                 ", dataNascimento='" + dataNascimento + '\'' +
-                ", sexo=" + sexo +
-                ", setor=" + setor +
+                ", sexo=" + sexo.getTexto() +
+                ", setor=" + setor.getTexto() +
                 ", salarioBase=" + salarioBase +
+                ", salarioFinal=" + this.getSalairoFinal() +
                 '}';
+    }
+
+    @Override
+    public double getSalairoFinal() {
+        return super.salarioBase;
     }
 }

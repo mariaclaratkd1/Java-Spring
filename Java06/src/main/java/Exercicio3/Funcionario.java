@@ -54,5 +54,6 @@ public abstract class Funcionario {
     public void setSalarioBase(double salarioBase) {
         this.salarioBase = salarioBase;
     }
-
+    //método abstrato//
+    public abstract double getSalairoFinal ();
 }
