@@ -1,0 +1,29 @@
+package Exercício4;
+
+public class Motoboy extends Funcionario{
+    private String placaDeMoto;
+
+    public Motoboy(String nome, String cpf, String dataNascimento, double salarioBase, String placaDeMoto) {
+        super(nome, cpf, dataNascimento, salarioBase);
+        this.placaDeMoto = placaDeMoto;
+    }
+
+    public String getPlacaDeMoto() {
+        return placaDeMoto;
+    }
+
+    public void setPlacaDeMoto(String placaDeMoto) {
+        this.placaDeMoto = placaDeMoto;
+    }
+
+    @Override
+    public String toString() {
+        return "Motoboy{" +
+                "placaDeMoto='" + placaDeMoto + '\'' +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", salarioBase=" + salarioBase +
+                '}';
+    }
+}
