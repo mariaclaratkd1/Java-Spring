@@ -1,8 +1,8 @@
-package Exercício4;
+package ex5;
 
 public enum Bonificacao {
-    GERENTE (1.3),
-    DIRETOR (1.2);
+    GERENTE (0.2),
+    DIRETOR (0.4);
 
     private final double valor;
 

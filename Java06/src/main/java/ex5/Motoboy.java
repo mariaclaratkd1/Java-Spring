@@ -1,10 +1,10 @@
-package Exercício4;
+package ex5;
 
 public class Motoboy extends Funcionario{
     private String placaDeMoto;
 
-    public Motoboy(String nome, String cpf, String dataNascimento, double salarioBase, String placaDeMoto) {
-        super(nome, cpf, dataNascimento, salarioBase);
+    public Motoboy(String nome, String cpf, String dataNascimento, double salarioBase, String dataAdmissao, Sexo sexo, String placaDeMoto) {
+        super(nome, cpf, dataNascimento, salarioBase, dataAdmissao, sexo);
         this.placaDeMoto = placaDeMoto;
     }
 
@@ -25,5 +25,10 @@ public class Motoboy extends Funcionario{
                 ", dataNascimento='" + dataNascimento + '\'' +
                 ", salarioBase=" + salarioBase +
                 '}';
+    }
+
+    @Override
+    public double obterSalarioFinal(Funcionario funcionario) {
+        return salarioBase;
     }
 }
