@@ -9,8 +9,8 @@ public class Diretor extends CargoDeConfianca implements Contratacao {
                 dataNascimento,
                 salarioBase,
                 dataAdmissao,
-                sexo,
-                Bonificacao.DIRETOR);
+                sexo
+        );
         this.PREMIO = PREMIO;
     }
 

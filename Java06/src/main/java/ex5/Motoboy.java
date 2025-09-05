@@ -28,7 +28,7 @@ public class Motoboy extends Funcionario{
     }
 
     @Override
-    public double obterSalarioFinal(Funcionario funcionario) {
-        return salarioBase;
+    public double getSalarioFinal() {
+        return 0;
     }
 }
