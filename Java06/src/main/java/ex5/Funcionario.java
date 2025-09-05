@@ -1,6 +1,6 @@
 package ex5;
 
-public abstract class Funcionario implements SalarioFInal{
+public abstract class Funcionario implements SalarioFinal {
     protected String nome;
     protected String cpf;
     protected String dataNascimento;

@@ -3,8 +3,14 @@ package ex5;
 public class Diretor extends CargoDeConfianca implements Contratacao {
     private double PREMIO = 1.1;
 
-    public Diretor(String nome, String cpf, String dataNascimento, double salarioBase, String dataAdmissao, Sexo sexo, Bonificacao bonificacao, double PREMIO) {
-        super(nome, cpf, dataNascimento, salarioBase, dataAdmissao, sexo, bonificacao);
+    public Diretor(String nome, String cpf, String dataNascimento, double salarioBase, String dataAdmissao, Sexo sexo, double PREMIO) {
+        super(nome,
+                cpf,
+                dataNascimento,
+                salarioBase,
+                dataAdmissao,
+                sexo,
+                Bonificacao.DIRETOR);
         this.PREMIO = PREMIO;
     }
 
@@ -33,8 +39,7 @@ public class Diretor extends CargoDeConfianca implements Contratacao {
 
     }
 
-    @Override
     public double obterSalarioFinal(Funcionario funcionario) {
-        return getSalarioBase * (salarioBase * PREMIO);
+        return salarioBase * (salarioBase * PREMIO);
     }
 }

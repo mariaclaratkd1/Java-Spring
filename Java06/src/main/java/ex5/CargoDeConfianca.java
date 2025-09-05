@@ -1,6 +1,5 @@
 package ex5;
 
-
 public abstract class CargoDeConfianca extends Funcionario {
     protected Bonificacao bonificacao;
 
@@ -9,4 +8,8 @@ public abstract class CargoDeConfianca extends Funcionario {
         this.bonificacao = bonificacao;
     }
 
+    @Override
+    public double getSalarioFinal() {
+        return salarioBase * bonificacao.getValor();
+    }
 }
