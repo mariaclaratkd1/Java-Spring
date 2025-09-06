@@ -8,8 +8,12 @@ public abstract class CargoDeConfianca extends Funcionario {
         this.bonificacao = bonificacao;
     }
 
-    @Override
-    public double getSalarioFinal() {
-        return salarioBase * bonificacao.getValor();
+    public Bonificacao getBonificacao() {
+        return bonificacao;
     }
+
+    public void setBonificacao(Bonificacao bonificacao) {
+        this.bonificacao = bonificacao;
+    }
+
 }

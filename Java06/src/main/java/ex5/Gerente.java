@@ -15,6 +15,12 @@ public class Gerente extends CargoDeConfianca{
                 ", salarioBase=" + salarioBase +
                 ", dataAdmissao='" + dataAdmissao + '\'' +
                 ", sexo=" + sexo +
+                ", salarioFinal=" + this.getSalarioFinal() +
                 '}';
+    }
+
+    @Override
+    public double getSalarioFinal() {
+        return super.salarioBase + this.bonificacao.getValor();
     }
 }
