@@ -1,5 +1,6 @@
 package com.example.Java09.controller;
 
+import ch.qos.logback.core.net.server.Client;
 import com.example.Java09.model.Funcionario;
 import com.example.Java09.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Funcionarios")
+@RequestMapping("/funcionarios")
 public class FuncionarioController {
     @Autowired
     private FuncionarioRepository funcionarioRepository;
@@ -23,6 +24,18 @@ public class FuncionarioController {
     public ResponseEntity <Funcionario> salvar (@RequestBody Funcionario funcionario){
         funcionarioRepository.save(funcionario);
         return ResponseEntity.status(HttpStatus.CREATED).body(funcionario);
+    }
+
+    @PutMapping
+    public ResponseEntity<Funcionario> atualizar (@RequestBody Funcionario funcionario){
+        Funcionario usuarioAtualizado = funcionarioRepository.save(funcionario);
+        return ResponseEntity.ok(usuarioAtualizado);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluir(@PathVariable Long id){
+        funcionarioRepository.deleteAllById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 }
