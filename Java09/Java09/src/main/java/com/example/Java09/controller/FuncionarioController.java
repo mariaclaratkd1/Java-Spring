@@ -31,7 +31,7 @@ public class FuncionarioController {
 
     @PutMapping
     public ResponseEntity<Funcionario> atualizar(@PathVariable Long id, @RequestBody Funcionario funcionario) {
-        Funcionario usuarioAtualizado = funcionarioRepository.save(funcionario);
+        Funcionario funcionarioAtuaizado = funcionarioService.atualizar(id, funcionario);
         return ResponseEntity.ok(usuarioAtualizado);
     }
 
