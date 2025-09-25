@@ -5,9 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, UUID> {
+public interface ClienteRepository extends JpaRepository<Cliente, String> {
     Optional<Cliente> findByprotocoloAtendimento (String protocoloAtendimento);
 }

@@ -1,12 +1,10 @@
 package com.example.Exercicio.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
+@Entity
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -16,7 +14,7 @@ public class Cliente {
     private String nome;
 
     @Column(nullable = false)
-    private String DataNascimento;
+    private String dataNascimento;
 
     @Column(nullable = false)
     private String protocoloAtendimento;
@@ -27,7 +25,7 @@ public class Cliente {
     public Cliente(UUID id, String nome, String dataNascimento, String protocoloAtendimento) {
         this.id = id;
         this.nome = nome;
-        DataNascimento = dataNascimento;
+        this.dataNascimento = dataNascimento;
         this.protocoloAtendimento = protocoloAtendimento;
     }
 
@@ -48,11 +46,11 @@ public class Cliente {
     }
 
     public String getDataNascimento() {
-        return DataNascimento;
+        return dataNascimento;
     }
 
     public void setDataNascimento(String dataNascimento) {
-        DataNascimento = dataNascimento;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getProtocoloAtendimento() {
