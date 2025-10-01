@@ -1,9 +1,7 @@
 package com.example.Java13.controller;
 
-import java.net.http.HttpClient;
-import java.util.List;
 
-import org.apache.catalina.connector.Response;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

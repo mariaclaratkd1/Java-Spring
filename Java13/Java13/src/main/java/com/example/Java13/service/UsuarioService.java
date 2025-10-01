@@ -14,7 +14,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public List<Usuariomodel> getAllUsers() {
+    public List<Usuariomodel> listarUsuarios() {
         return usuarioRepository.findAll();
     }
 
@@ -38,10 +38,5 @@ public class UsuarioService {
             throw new RuntimeException("Usuário não encontrado");
         }
         usuarioRepository.deleteById(id);
-    }
-
-    public List<Usuariomodel> listarUsuarios() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarUsuarios'");
-    }   
+    } 
 }
