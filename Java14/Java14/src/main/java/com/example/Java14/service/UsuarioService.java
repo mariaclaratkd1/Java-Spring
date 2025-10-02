@@ -23,4 +23,19 @@ public class UsuarioService {
         }
         return repository.save(usuario);
     }
+
+    public UsuarioModel atualizar (Long id, UsuarioModel usuario) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Usuário não encontrado");
+        }
+        usuario.setId(id);
+        return repository.save(usuario);
+    }
+
+    public void deletar (Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Usuário não encontrado");
+        }
+        repository.deleteById(id);
+    }   
 }
