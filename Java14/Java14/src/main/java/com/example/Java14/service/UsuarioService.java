@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.Java14.exception.EmailCadastradoException;
 import com.example.Java14.model.UsuarioModel;
 import com.example.Java14.repository.UsuarioRepository;
 
@@ -19,7 +20,7 @@ public class UsuarioService {
 
     public UsuarioModel salvar(UsuarioModel usuario) {
         if (repository.findByEmail(usuario.getEmail()).isPresent()) {
-            throw new IllegalArgumentException("Email já cadastrado");
+            throw new EmailCadastradoException("Email já cadastrado");
         }
         return repository.save(usuario);
     }
