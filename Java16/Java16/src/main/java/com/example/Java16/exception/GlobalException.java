@@ -1,5 +1,6 @@
 package com.example.Java16.exception;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,7 +13,7 @@ public class GlobalException {
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, Object>> illegalArgumentException (IllegalArgumentException erro){
         return ResponseEntity
-                .badRequest()
+                .status(HttpStatus.CONFLICT)
                 .body(Map.of(
                         "messagem", erro.getMessage(),
                         "sucesso", false
